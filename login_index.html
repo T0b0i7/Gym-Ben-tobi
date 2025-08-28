@@ -1,124 +1,142 @@
 <!DOCTYPE html>
-
-<html lang="en">
- 
-
+<html lang="fr">
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-
-          content="width=device-width, 
-
-                         initial-scale=1.0">
-
-    <title>kalyan's GYM</title>
-
-    <link rel="stylesheet"
-
-          href="login_style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion GYM 0-BEN</title>
+    <style>
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at 70% 30%, #ffb347 0%, #ffcc33 40%, #232526 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', Arial, sans-serif;
+            overflow: hidden;
+        }
+        .login-container {
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+            border-radius: 30px;
+            padding: 40px 35px 30px 35px;
+            width: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            border: 1.5px solid rgba(255,255,255,0.25);
+            position: relative;
+        }
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: -30px; left: -30px; right: -30px; bottom: -30px;
+            z-index: -1;
+            border-radius: 40px;
+            background: linear-gradient(135deg, #ffb347 0%, #ffcc33 100%);
+            opacity: 0.15;
+        }
+        .login-title {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #232526;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(255,204,51,0.15);
+        }
+        .login-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .login-input {
+            padding: 13px 16px;
+            border-radius: 12px;
+            border: none;
+            background: rgba(255,255,255,0.85);
+            font-size: 1.05rem;
+            color: #232526;
+            box-shadow: 0 2px 8px rgba(255,204,51,0.08);
+            transition: box-shadow 0.2s, border 0.2s;
+        }
+        .login-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #ffb347;
+            border: 1.5px solid #ffb347;
+        }
+        .login-btn {
+            padding: 13px 0;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
+            color: #232526;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(255,204,51,0.15);
+            transition: background 0.3s, color 0.3s;
+        }
+        .login-btn:hover {
+            background: linear-gradient(90deg, #232526 0%, #ffb347 100%);
+            color: #fff;
+        }
+        .login-footer {
+            margin-top: 18px;
+            font-size: 0.95rem;
+            color: #232526;
+            opacity: 0.7;
+        }
+        @media (max-width: 400px) {
+            .login-container {
+                width: 95vw;
+                padding: 25px 10px;
+            }
+            .login-title {
+                font-size: 1.3rem;
+            }
+        }
+        /* Désactive la sélection de texte */
+        body, input, button {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+    </style>
 </head>
- 
-
 <body>
-
-    <header>
-
-        <h1 class="heading">Kalyan's GYM</h1>
-
-    </header>
- 
-
-    <!-- container div -->
-
-    <div class="container">
- 
-
-        <!-- upper button section to select
-
-             the login or signup form -->
-
-        <div class="slider"></div>
-
-        <div class="btn">
-
-            <button class="login">Login</button>
-
-            <button class="signup">Signup</button>
-
-        </div>
- 
-
-        <!-- Form section that contains the
-
-             login and the signup form -->
-
-        <div class="form-section">
- 
-
-            <!-- login form -->
-
-            <div class="login-box">
-
-                <input type="email"
-
-                       class="email ele"
-
-                       placeholder="youremail@email.com">
-
-                <input type="password"
-
-                       class="password ele"
-
-                       placeholder="password">
-
-                <button class="clkbtn">Login</button>
-
-            </div>
- 
-
-            <!-- signup form -->
-
-            <div class="signup-box">
-
-                <input type="text"
-
-                       class="name ele"
-
-                       placeholder="Enter your name">
-
-                <input type="email"
-
-                       class="email ele"
-
-                       placeholder="youremail@email.com">
-
-                <input type="password"
-
-                       class="password ele"
-
-                       placeholder="password">
-
-                <input type="password"
-
-                       class="password ele"
-
-                       placeholder="Confirm password">
-
-                <button class="clkbtn">Signup</button>
-
-            </div>
-
-        </div>
-
+    <div class="login-container">
+        <div class="login-title">GYM 0-BEN</div>
+        <form class="login-form" autocomplete="off" onsubmit="return false;">
+            <input type="text" class="login-input" placeholder="Nom d'utilisateur" autocomplete="off" required>
+            <input type="password" class="login-input" placeholder="Mot de passe" autocomplete="off" required>
+            <button class="login-btn" type="submit">Se connecter</button>
+        </form>
+        <div class="login-footer">Accès réservé aux membres</div>
     </div>
+    <script>
+        // Bloque le clic droit
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
 
-    <script src="login_script.js"></script>
+        // Bloque F12, Ctrl+Shift+I, Ctrl+U, Ctrl+Shift+C
+        document.addEventListener('keydown', function(e) {
+            if (
+                e.key === "F12" ||
+             
+                (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "C" || e.key === "J")) ||
+                (e.ctrlKey && e.key === "U")
+            ) {
+                e.preventDefault();
+            }
+        });
 
+        // Bloque le glisser-déposer
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+    </script>
 </body>
- 
-
 </html>
- 
