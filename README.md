@@ -79,5 +79,6 @@ Ce répertoire centralise toutes les ressources visuelles utilisées par l'appli
 *   **Objectif** : Fournir des informations générales sur le projet.
 *   **Parties Internes** : Le fichier [README.md](README.md) contient la documentation du projet.
 
+[👉 **Accéder à la démo en ligne**](https://animated-starburst-174dd2.netlify.app)
 ---
-Préview : animated-starburst-174dd2.netlify.app
+
